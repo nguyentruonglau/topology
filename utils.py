@@ -170,15 +170,17 @@ def get_recall(proba_one, proba_two, num_img):
     Returns:
         [int]: recall
     """
-    y_pred = []
-    print
+    y_pred = [];
     for i,j in zip(proba_one, proba_two):
         if j >= i: y_pred.append(1)
         else: y_pred.append(0)
 
-    y_pred = y_pred[0:num_img]
-    recall = np.sum(y_pred)
-    return recall
+    y_pred_one = y_pred[0:num_img]
+    y_pred_zero = y_pred[num_img:]
+
+    recall_class_one = np.sum(y_pred_one)
+    recall_class_zero = num_img - np.sum(y_pred_zero)
+    return recall_class_one, recall_class_zero
 
 
 def model_from_layer(model, name_layer):

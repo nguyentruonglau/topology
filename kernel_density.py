@@ -1,6 +1,6 @@
 from sklearn.neighbors import KernelDensity
 from sklearn.decomposition import PCA
-from geometric_transform import normalizate_min_max
+from geometric import normalizate_min_max
 import numpy as np
 
 
