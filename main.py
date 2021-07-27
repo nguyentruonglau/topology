@@ -32,17 +32,18 @@ def main(FLAGS):
     #define number of images
     MODEL_NAME = FLAGS.model_name
     CLASS_NAME = FLAGS.class_name
-    DATA_SHAPE = FLAGS.data_shape
-    MODEL_SHAPE = FLAGS.model_shape
+    DATA_NAME = FLAGS.data_name
+    DATA_SHAPE = tuple(FLAGS.data_shape)
+    MODEL_SHAPE = tuple(FLAGS.model_shape)
     SAVE_DATA = dict()
 
     # ==================== TRAIN ====================
     print('==================== TRAINING STAGE ====================')
 
-    NUM_IMG_TRAIN = 5000
+    NUM_IMG_TRAIN = FLAGS.num_img_train
     
     #get data train
-    x_train, y_train = get_data_cifar(data_name='cifar10', num_img=NUM_IMG_TRAIN, class_name=CLASS_NAME)
+    x_train, y_train = get_data_skin_cancer(data_name='skin_cancer', num_img=NUM_IMG_TRAIN, class_name=CLASS_NAME)
     
     #get model
     model = get_model(model_name=MODEL_NAME, data_shape=DATA_SHAPE, model_shape=MODEL_SHAPE)
@@ -84,29 +85,33 @@ def main(FLAGS):
 
     #get recall before transform
     recall_class_one, recall_class_zero = get_recall(proba_one, proba_two_before, NUM_IMG_TRAIN)
+    SAVE_DATA['proba_one_training'] = proba_one
+    SAVE_DATA['proba_two_training_before'] = proba_two_before
+
     print('[INFOR]: Recall training of class {} before transform: {}'.format(CLASS_NAME, recall_class_one))
     print('[INFOR]: Recall training of class not {} before transform: {}\n'.format(CLASS_NAME, recall_class_zero))
+
     SAVE_DATA['recall_one_training_before'] = recall_class_one
     SAVE_DATA['recall_zero_training_before'] = recall_class_zero
 
     #get recall after transform
     recall_class_one, recall_class_zero = get_recall(proba_one, proba_two_after, NUM_IMG_TRAIN)
+
+    SAVE_DATA['proba_two_training_after'] = proba_two_after
+
     print('[INFOR]: Recall training of class {} after transform: {}'.format(CLASS_NAME, recall_class_one))
     print('[INFOR]: Recall training of class not {} after transform: {}'.format(CLASS_NAME, recall_class_zero))
+
     SAVE_DATA['recall_one_training_after'] = recall_class_one
     SAVE_DATA['recall_zero_training_after'] = recall_class_zero
 
     # ==================== TEST ====================
     print('[INFOR] \n\n==================== TESTING STAGE ====================\n\n')
 
-    NUM_IMG_TEST = 1000
+    NUM_IMG_TEST = FLAGS.num_img_test
 
     #get data test
-    x_test, y_test = get_data_cifar(data_name='test_cifar10', num_img=NUM_IMG_TEST, class_name=CLASS_NAME)
-    # x_test = x_test[0:100]
-    y_test = to_categorical(y_test, num_classes=2, dtype=int)
-    SAVE_DATA['y_test'] = y_test
-    print('[INFOR]: Save y_test, shape {}x{}'.format(y_test.shape[0], y_test.shape[1]))
+    x_test, y_test = get_data_skin_cancer(data_name='test_skin_cancer', num_img=NUM_IMG_TEST, class_name=CLASS_NAME)
 
     #preprocessing data
     x_test = pre_processing_data(model_name = MODEL_NAME, data = x_test)
@@ -162,34 +167,31 @@ def main(FLAGS):
 
     #get recall before transform
     recall_class_one, recall_class_zero = get_recall(proba_one_test, proba_two_before_test, NUM_IMG_TEST)
+    SAVE_DATA['proba_one_testing'] = proba_one_test
+    SAVE_DATA['proba_two_testing_before'] = proba_two_before_test
+
     print('[INFOR]: Recall testing of class {} before transform: {}'.format(CLASS_NAME, recall_class_one))
     print('[INFOR]: Recall testing of class not {} before transform: {}\n'.format(CLASS_NAME, recall_class_zero))
+
     SAVE_DATA['recall_one_testing_before'] = recall_class_one
     SAVE_DATA['recall_zero_testing_before'] = recall_class_zero
 
     #get recall after transform
     recall_class_one, recall_class_zero = get_recall(proba_one_test, proba_two_after_test, NUM_IMG_TEST)
+    SAVE_DATA['proba_two_testing_after'] = proba_two_after_test
+
     print('[INFOR]: Recall testing of class {} after transform: {}'.format(CLASS_NAME, recall_class_one))
     print('[INFOR]: Recall testing of class not {} after transform: {}'.format(CLASS_NAME, recall_class_zero))
+
     SAVE_DATA['recall_one_testing_after'] = recall_class_one
     SAVE_DATA['recall_zero_testing_after'] = recall_class_zero
 
-    #normalization, sum=1, for draw ROC
-    proba_one_test = np.reshape(proba_one_test, (len(proba_one_test), -1))
-    proba_two_after_test = np.reshape(proba_two_after_test, (len(proba_two_after_test), -1))
-
-    proba_one_test = proba_one_test / (proba_one_test + proba_two_after_test)
-    proba_two_after_test = proba_two_after_test / (proba_one_test + proba_two_after_test)
-    y_pred = np.hstack((proba_two_after_test, proba_one_test))
-
-    print('[INFOR]: Save y_pred, shape {}x{}'.format(y_pred.shape[0], y_pred.shape[1]))
-    SAVE_DATA['y_pred'] = y_pred
     SAVE_DATA = [SAVE_DATA]
 
     if not os.path.exists(FLAGS.output_dir):
         os.mkdir(FLAGS.output_dir)
 
-    np.save(os.path.join(FLAGS.output_dir, '{}_{}.npy'.format(MODEL_NAME, CLASS_NAME)), SAVE_DATA)
+    np.save(os.path.join(FLAGS.output_dir, '{}_{}_{}.npy'.format(DATA_NAME, MODEL_NAME, CLASS_NAME)), SAVE_DATA)
 
     print('[INFOR]: Complete save data')
 
@@ -201,19 +203,19 @@ if __name__ == '__main__':
     parser.add_argument(
         '--model_name',
         type=str,
-        default='EfficientNetB3',
+        default='ResNet50',
         help='Three options: ResNet50, EfficientNetB3, InceptionV3'
     )
     parser.add_argument(
         '--data_shape',
-        type=tuple,
-        default=(32,32,3),
+        type=int,
+        nargs='+',
         help='Shape of data'
     )
     parser.add_argument(
         '--model_shape',
-        type=tuple,
-        default=(300, 300),
+        type=int,
+        nargs='+',
         help='Shape of model'
     )
     parser.add_argument(
@@ -227,7 +229,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--class_name',
         type=str,
-        default='bird',
+        default='airplane',
         help='''A class in the dataset
         cifar10: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
         fashion_mnist: t-shirt, trouser, pullover, dress, coat, sandal, shirt, sneaker, bag, ankle-boot
@@ -237,8 +239,18 @@ if __name__ == '__main__':
     parser.add_argument(
         '--output_dir',
         type=str,
-        default='./output',
+        default='./output/npy_data',
         help='Output directory'
+    )
+    parser.add_argument(
+        '--num_img_train',
+        type=int,
+        default=5000,
+    )
+    parser.add_argument(
+        '--num_img_test',
+        type=int,
+        default=1000,
     )
 
     FLAGS = parser.parse_args()
@@ -249,6 +261,8 @@ if __name__ == '__main__':
     print("data_shape = ", FLAGS.data_shape)
     print("model_shape = ", FLAGS.model_shape)
     print("output_dir = ", FLAGS.output_dir)
+    print("num_img_train = ", FLAGS.num_img_train)
+    print("num_img_test = ", FLAGS.num_img_test)
 
     start_time = time.time()
     main(FLAGS)
