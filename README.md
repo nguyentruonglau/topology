@@ -79,7 +79,7 @@ Topology and Geometric Transformations applications.
 * scikit-learn==0.24.2
 * scipy==1.5.4
 * tqdm==4.60.0
-* tensorflow==2.4.1
+* tensorflow==2.5.
 
 <!-- GETTING STARTED -->
 ## Getting Started
