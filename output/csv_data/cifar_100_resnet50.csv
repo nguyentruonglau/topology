@@ -1,2 +1,0 @@
-index,total_norm_before,time_r,total_norm_after,sen_train_before,spe_train_before,sen_train_after,spe_train_after,time_train,sen_test_before,spe_test_before,sen_test_after,spe_test_after,time_test
-0,0.6278,1.584,0.0004,25.0,99.6,96.2,79.80000000000001,10.0,34.0,99.0,99.0,36.0,0.4161
