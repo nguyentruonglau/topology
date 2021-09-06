@@ -1,6 +1,0 @@
-fashion_mnist
-test_fashion_mnist
-skin_cancer
-test_skin_cancer
-
-!*.gitignore
