@@ -11,38 +11,39 @@ from utils import model_from_layer
 from utils import get_recall
 from utils import get_predict
 from sklearn.decomposition import PCA
-from scipy.spatial.distance import cdist
-from sklearn.neighbors import KernelDensity
 from geometric import normalizate_min_max
 
-import time
 import os
 import numpy as np
-import tensorflow as tf
 import argparse
 import copy
 import time
-
-from tensorflow.keras.utils import to_categorical
 
 os.environ['TF_XLA_FLAGS'] = '--tf_xla_enable_xla_devices'
 
 def main(FLAGS):
     start_train_time = time.time()
     #save data to excel file
-    output_file = os.path.join(FLAGS.output_dir, '{}_{}.csv'.format(FLAGS.dataset_name.lower(), FLAGS.model_name.lower()))
+    output_file = os.path.join(FLAGS.output_dir, '{}_{}.csv'.format(FLAGS.dataset_name.lower(), 
+        FLAGS.model_name.lower())
+        )
     file = open(output_file, 'a')
     save_data = ''
 
     print('==================== TRAINING STAGE ====================')
     num_img_train = int(FLAGS.class_name_train.split('_')[-1])
-    save_data += FLAGS.class_name_train.split('_')[0] + ','#index 
+    save_data += FLAGS.class_name_train.split('_')[0] + ','#index
+    if int(FLAGS.class_name_train.split('_')[0]) == 0:
+        file.write('index, total_norm_before, time_r, total_norm_after,\
+        sen_train_before, spe_train_before, sen_train_after, spe_train_after, time_train,\
+        sen_test_before, spe_test_before, sen_test_after, spe_test_after, time_test \n')
     
     #get data train
     x_train, y_train = get_data(FLAGS.dataset_name, 'train', FLAGS.class_name_train)
     
     #get model
-    model = get_model(FLAGS.model_name, FLAGS.data_shape, FLAGS.model_shape)
+    model_shape = tuple(FLAGS.model_shape)
+    model = get_model(FLAGS.model_name, FLAGS.data_shape, model_shape)
 
     #preprocessing data
     x_train = pre_processing_data(FLAGS.model_name, data = x_train)
@@ -87,16 +88,16 @@ def main(FLAGS):
     #get recall before transform
     recall_class_one, recall_class_zero = get_recall(proba_one, proba_two_before, num_img_train)
 
-    print('[INFOR]: Recall training of class {} before transform: {}'.format(FLAGS.class_name_train, recall_class_one))
-    print('[INFOR]: Recall training of class not {} before transform: {}\n'.format(FLAGS.class_name_train, recall_class_zero))
+    print('[INFOR]: SEN training of class {} before transform: {}'.format(FLAGS.class_name_train, recall_class_one))
+    print('[INFOR]: SPE training of class {} before transform: {}\n'.format(FLAGS.class_name_train, recall_class_zero))
     save_data += str(round(recall_class_one/num_img_train, 4)*100) + ','#sen_train_before
     save_data += str(round(recall_class_zero/num_img_train, 4)*100) + ','#spe_train_before
 
     #get recall after transform
     recall_class_one, recall_class_zero = get_recall(proba_one, proba_two_after, num_img_train)
 
-    print('[INFOR]: Recall training of class {} after transform: {}'.format(FLAGS.class_name_train, recall_class_one))
-    print('[INFOR]: Recall training of class not {} after transform: {}'.format(FLAGS.class_name_train, recall_class_zero))
+    print('[INFOR]: SEN training of class {} after transform: {}'.format(FLAGS.class_name_train, recall_class_one))
+    print('[INFOR]: SPE training of class {} after transform: {}'.format(FLAGS.class_name_train, recall_class_zero))
     save_data += str(round(recall_class_one/num_img_train, 4)*100) + ','#sen_train_after
     save_data += str(round(recall_class_zero/num_img_train, 4)*100) + ','#spe_train_after
 
@@ -166,24 +167,22 @@ def main(FLAGS):
     #get recall before transform
     recall_class_one, recall_class_zero = get_recall(proba_one_test, proba_two_before_test, num_img_test)
 
-    print('[INFOR]: Recall testing of class {} before transform: {}'.format(FLAGS.class_name_test, recall_class_one))
-    print('[INFOR]: Recall testing of class not {} before transform: {}\n'.format(FLAGS.class_name_test, recall_class_zero))
+    print('[INFOR]: SEN testing of class {} before transform: {}'.format(FLAGS.class_name_test, recall_class_one))
+    print('[INFOR]: SPE testing of class {} before transform: {}\n'.format(FLAGS.class_name_test, recall_class_zero))
     save_data += str(round(recall_class_one/num_img_test, 4)*100) + ','#sen_test_before
     save_data += str(round(recall_class_zero/num_img_test, 4)*100) + ','#spe_test_before
 
     #get recall after transform
     recall_class_one, recall_class_zero = get_recall(proba_one_test, proba_two_after_test, num_img_test)
 
-    print('[INFOR]: Recall testing of class {} after transform: {}'.format(FLAGS.class_name_test, recall_class_one))
-    print('[INFOR]: Recall testing of class not {} after transform: {}'.format(FLAGS.class_name_test, recall_class_zero))
+    print('[INFOR]: SEN testing of class {} after transform: {}'.format(FLAGS.class_name_test, recall_class_one))
+    print('[INFOR]: SPE testing of class {} after transform: {}'.format(FLAGS.class_name_test, recall_class_zero))
     save_data += str(round(recall_class_one/num_img_test, 4)*100) + ','#sen_test_after
     save_data += str(round(recall_class_zero/num_img_test, 4)*100) + ','#spe_test_after
 
     print('[INFOR]: Complete save data')
     end_test_time = time.time()
     save_data += str(round((end_test_time - start_test_time), 4))#time_test
-
-    #index time_r time_train time_test total_norm_before total_norm_after sen_before sen_after spe_before spe_after
     file.write(save_data); file.write("\n")
     file.close()
 
@@ -206,8 +205,8 @@ if __name__ == '__main__':
     )
     parser.add_argument(
         '--model_shape',
-        type=tuple,
-        default=(224,224),
+        type=int,
+        nargs='+',
         help='Shape of model'
     )
     parser.add_argument(
