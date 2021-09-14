@@ -107,9 +107,7 @@ To get a local copy up and running follow these simple example steps.
    
    > tf.config.list_physical_devices('GPU')
    ```
-   If return: [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
-   
-   is successful.
+   If return: [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')] is successful.
    
 2. If error, setting GPU: for Window at [here](https://www.tensorflow.org/install/gpu#windows_setup) & for Linux at [here](https://www.tensorflow.org/install/gpu#ubuntu_1804_cuda_110) [for Tensorflow].
 
