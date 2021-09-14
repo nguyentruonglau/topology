@@ -136,7 +136,7 @@ Cifar_100
 ```
 Run: >python main.py --model_name (model name that you want to perform training)
                      --data_shape (shape of images)
-                     --model_shape (shape of model, we must have retrain model, so model_shape will have fixed shapes)
+                     --model_shape (model_shape will have fixed shapes)
                      --dataset_name (name of dataset)
                      --class_name_train (name of npy files, for train)
                      --class_name_test (name of npy files, for test)
