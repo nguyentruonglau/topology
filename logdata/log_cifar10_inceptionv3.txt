@@ -1,0 +1,951 @@
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 0_5000 --class_name_test 0_1000
+2021-09-14 17:57:01.428417: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  0_5000
+class_name_test =  0_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 17:57:04.365117: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 17:57:04.418335: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 17:57:04.423410: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 17:57:04.431589: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 17:57:04.433742: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 17:57:04.439279: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 17:57:04.442849: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 17:57:04.449453: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 17:57:04.454766: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 17:57:04.458146: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 17:57:04.460366: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 17:57:04.462310: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 17:57:04.474797: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x1c7bb29c420 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 17:57:04.478179: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 17:57:04.480317: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 17:57:04.484823: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 17:57:04.945349: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 17:57:04.947985: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 17:57:04.949367: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 17:57:04.950857: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 17:57:04.957887: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x1c7ec24c2e0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 17:57:04.960838: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 17:57:07.223382: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 17:57:07.900481: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 17:57:08.551339: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 17:57:09.333421: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 17:57:10.006942: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 17:57:10.709733: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 31ms/step
+[INFOR]: Index of most vote   :404
+[INFOR]: Class of most vote   :airliner
+[INFOR]: Number of most vote  :1384.0
+
+
+[INFOR]: Index of second most vote     :472
+[INFOR]: Class of second most vote     :canoe
+[INFOR]: Number of second most vote    :373.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 30ms/step
+[INFOR]: Toltal norm before transform: 0.6969
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.0050
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 30ms/step
+[INFOR]: SEN training of class 0_5000 before transform: 1384
+[INFOR]: SPE training of class 0_5000 before transform: 4985
+
+[INFOR]: SEN training of class 0_5000 after transform: 3624
+[INFOR]: SPE training of class 0_5000 after transform: 3849
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 30ms/step
+[INFOR]: Index of most vote   :404
+[INFOR]: Class of most vote   :airliner
+[INFOR]: Number of most vote  :256.0
+
+
+[INFOR]: Index of second most vote     :472
+[INFOR]: Class of second most vote     :canoe
+[INFOR]: Number of second most vote    :78.0
+[INFOR]: SEN testing of class 0_1000 before transform: 256
+[INFOR]: SPE testing of class 0_1000 before transform: 998
+
+[INFOR]: SEN testing of class 0_1000 after transform: 965
+[INFOR]: SPE testing of class 0_1000 after transform: 375
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 1_5000 --class_name_test 1_1000
+2021-09-14 17:58:19.054072: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  1_5000
+class_name_test =  1_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 17:58:21.869747: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 17:58:21.900126: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 17:58:21.905766: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 17:58:21.914952: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 17:58:21.917215: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 17:58:21.923928: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 17:58:21.927607: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 17:58:21.934542: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 17:58:21.940218: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 17:58:21.943525: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 17:58:21.947165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 17:58:21.949443: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 17:58:21.963536: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x23ab9051e00 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 17:58:21.967435: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 17:58:21.970003: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 17:58:21.976355: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 17:58:22.422394: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 17:58:22.425464: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 17:58:22.427185: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 17:58:22.428915: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 17:58:22.437679: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x23ae765cc80 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 17:58:22.440575: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 17:58:24.645712: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 17:58:25.328367: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 17:58:25.980780: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 17:58:26.754311: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 17:58:27.431242: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 17:58:28.140084: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 32ms/step
+[INFOR]: Index of most vote   :675
+[INFOR]: Class of most vote   :moving van
+[INFOR]: Number of most vote  :1736.0
+
+
+[INFOR]: Index of second most vote     :408
+[INFOR]: Class of second most vote     :amphibian, amphibious vehicle
+[INFOR]: Number of second most vote    :669.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 30ms/step
+[INFOR]: Toltal norm before transform: 0.6181
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.0018
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 30ms/step
+[INFOR]: SEN training of class 1_5000 before transform: 1736
+[INFOR]: SPE training of class 1_5000 before transform: 4591
+
+[INFOR]: SEN training of class 1_5000 after transform: 3867
+[INFOR]: SPE training of class 1_5000 after transform: 3615
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 30ms/step
+[INFOR]: Index of most vote   :675
+[INFOR]: Class of most vote   :moving van
+[INFOR]: Number of most vote  :356.0
+
+
+[INFOR]: Index of second most vote     :408
+[INFOR]: Class of second most vote     :amphibian, amphibious vehicle
+[INFOR]: Number of second most vote    :139.0
+[INFOR]: SEN testing of class 1_1000 before transform: 356
+[INFOR]: SPE testing of class 1_1000 before transform: 923
+
+[INFOR]: SEN testing of class 1_1000 after transform: 915
+[INFOR]: SPE testing of class 1_1000 after transform: 501
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 2_5000 --class_name_test 2_1000
+2021-09-14 17:59:37.467624: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  2_5000
+class_name_test =  2_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 17:59:40.284571: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 17:59:40.311780: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 17:59:40.317073: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 17:59:40.326002: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 17:59:40.328531: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 17:59:40.335571: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 17:59:40.339068: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 17:59:40.346121: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 17:59:40.351966: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 17:59:40.355267: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 17:59:40.359393: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 17:59:40.361652: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 17:59:40.375783: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x2af395f0220 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 17:59:40.379578: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 17:59:40.382060: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 17:59:40.388506: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 17:59:40.832421: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 17:59:40.835562: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 17:59:40.837265: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 17:59:40.839040: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 17:59:40.847587: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x2af62c6fdb0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 17:59:40.851549: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 17:59:43.061909: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 17:59:43.737720: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 17:59:44.389019: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 17:59:45.159945: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 17:59:45.841278: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 17:59:46.549289: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 32ms/step
+[INFOR]: Index of most vote   :80
+[INFOR]: Class of most vote   :black grouse
+[INFOR]: Number of most vote  :363.0
+
+
+[INFOR]: Index of second most vote     :97
+[INFOR]: Class of second most vote     :drake
+[INFOR]: Number of second most vote    :266.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 29ms/step
+[INFOR]: Toltal norm before transform: 0.9120
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.3494
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 29ms/step
+[INFOR]: SEN training of class 2_5000 before transform: 363
+[INFOR]: SPE training of class 2_5000 before transform: 4982
+
+[INFOR]: SEN training of class 2_5000 after transform: 3424
+[INFOR]: SPE training of class 2_5000 after transform: 3287
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 29ms/step
+[INFOR]: Index of most vote   :80
+[INFOR]: Class of most vote   :black grouse
+[INFOR]: Number of most vote  :79.0
+
+
+[INFOR]: Index of second most vote     :97
+[INFOR]: Class of second most vote     :drake
+[INFOR]: Number of second most vote    :48.0
+[INFOR]: SEN testing of class 2_1000 before transform: 79
+[INFOR]: SPE testing of class 2_1000 before transform: 996
+
+[INFOR]: SEN testing of class 2_1000 after transform: 692
+[INFOR]: SPE testing of class 2_1000 after transform: 497
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 3_5000 --class_name_test 3_1000
+2021-09-14 18:00:51.930991: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  3_5000
+class_name_test =  3_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 18:00:54.751687: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 18:00:54.776204: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:00:54.781455: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 18:00:54.789674: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:00:54.792036: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:00:54.797533: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 18:00:54.801150: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 18:00:54.807592: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 18:00:54.812864: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 18:00:54.815880: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:00:54.818049: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:00:54.820120: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 18:00:54.833192: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x18a3c48d7c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:00:54.836891: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 18:00:54.839130: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:00:54.843631: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:00:55.286111: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 18:00:55.289032: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 18:00:55.290478: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 18:00:55.292164: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 18:00:55.298887: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x18a6a9e1060 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:00:55.301830: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 18:00:57.531471: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 18:00:58.227321: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:00:58.870672: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 18:00:59.633455: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:01:00.297058: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:01:00.994896: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 31ms/step
+[INFOR]: Index of most vote   :152
+[INFOR]: Class of most vote   :Japanese spaniel
+[INFOR]: Number of most vote  :252.0
+
+
+[INFOR]: Index of second most vote     :382
+[INFOR]: Class of second most vote     :squirrel monkey, Saimiri sciureus
+[INFOR]: Number of second most vote    :190.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 29ms/step
+[INFOR]: Toltal norm before transform: 0.9481
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.1055
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 30ms/step
+[INFOR]: SEN training of class 3_5000 before transform: 252
+[INFOR]: SPE training of class 3_5000 before transform: 4855
+
+[INFOR]: SEN training of class 3_5000 after transform: 3440
+[INFOR]: SPE training of class 3_5000 after transform: 3034
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 29ms/step
+[INFOR]: Index of most vote   :152
+[INFOR]: Class of most vote   :Japanese spaniel
+[INFOR]: Number of most vote  :66.0
+
+
+[INFOR]: Index of second most vote     :284
+[INFOR]: Class of second most vote     :Siamese cat, Siamese
+[INFOR]: Number of second most vote    :37.0
+[INFOR]: SEN testing of class 3_1000 before transform: 66
+[INFOR]: SPE testing of class 3_1000 before transform: 967
+
+[INFOR]: SEN testing of class 3_1000 after transform: 841
+[INFOR]: SPE testing of class 3_1000 after transform: 326
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 4_5000 --class_name_test 4_1000
+2021-09-14 18:02:05.654743: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  4_5000
+class_name_test =  4_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 18:02:08.512500: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 18:02:08.540904: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:02:08.546474: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 18:02:08.554910: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:02:08.557107: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:02:08.563888: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 18:02:08.567779: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 18:02:08.575222: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 18:02:08.580984: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 18:02:08.584273: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:02:08.587267: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:02:08.589515: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 18:02:08.608642: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x12a3a4eeee0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:02:08.612119: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 18:02:08.614552: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:02:08.620490: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:02:09.053649: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 18:02:09.056296: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 18:02:09.057947: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 18:02:09.059686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 18:02:09.067730: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x12a69879880 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:02:09.070690: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 18:02:11.305374: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 18:02:11.982869: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:02:12.637317: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 18:02:13.409694: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:02:14.084981: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:02:14.787611: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 31ms/step
+[INFOR]: Index of most vote   :353
+[INFOR]: Class of most vote   :gazelle
+[INFOR]: Number of most vote  :554.0
+
+
+[INFOR]: Index of second most vote     :351
+[INFOR]: Class of second most vote     :hartebeest
+[INFOR]: Number of second most vote    :329.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 29ms/step
+[INFOR]: Toltal norm before transform: 0.8676
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.0865
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 29ms/step
+[INFOR]: SEN training of class 4_5000 before transform: 554
+[INFOR]: SPE training of class 4_5000 before transform: 4985
+
+[INFOR]: SEN training of class 4_5000 after transform: 4011
+[INFOR]: SPE training of class 4_5000 after transform: 3427
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 29ms/step
+[INFOR]: Index of most vote   :353
+[INFOR]: Class of most vote   :gazelle
+[INFOR]: Number of most vote  :99.0
+
+
+[INFOR]: Index of second most vote     :351
+[INFOR]: Class of second most vote     :hartebeest
+[INFOR]: Number of second most vote    :55.0
+[INFOR]: SEN testing of class 4_1000 before transform: 99
+[INFOR]: SPE testing of class 4_1000 before transform: 997
+
+[INFOR]: SEN testing of class 4_1000 after transform: 846
+[INFOR]: SPE testing of class 4_1000 after transform: 471
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 5_5000 --class_name_test 5_1000
+2021-09-14 18:03:19.616249: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  5_5000
+class_name_test =  5_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 18:03:22.397452: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 18:03:22.423721: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:03:22.428687: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 18:03:22.437133: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:03:22.439377: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:03:22.445474: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 18:03:22.449076: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 18:03:22.456212: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 18:03:22.461336: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 18:03:22.464359: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:03:22.466625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:03:22.469402: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 18:03:22.482607: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x252b8abf880 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:03:22.485950: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 18:03:22.488909: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:03:22.493857: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:03:22.924808: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 18:03:22.927804: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 18:03:22.929448: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 18:03:22.931141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 18:03:22.938957: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x252e0d74060 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:03:22.941796: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 18:03:25.149342: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 18:03:25.838586: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:03:26.492317: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 18:03:27.270968: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:03:27.949053: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:03:28.649908: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 31ms/step
+[INFOR]: Index of most vote   :152
+[INFOR]: Class of most vote   :Japanese spaniel
+[INFOR]: Number of most vote  :977.0
+
+
+[INFOR]: Index of second most vote     :193
+[INFOR]: Class of second most vote     :Australian terrier
+[INFOR]: Number of second most vote    :270.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 29ms/step
+[INFOR]: Toltal norm before transform: 0.7812
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.2568
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 29ms/step
+[INFOR]: SEN training of class 5_5000 before transform: 977
+[INFOR]: SPE training of class 5_5000 before transform: 4948
+
+[INFOR]: SEN training of class 5_5000 after transform: 3856
+[INFOR]: SPE training of class 5_5000 after transform: 3313
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 29ms/step
+[INFOR]: Index of most vote   :152
+[INFOR]: Class of most vote   :Japanese spaniel
+[INFOR]: Number of most vote  :206.0
+
+
+[INFOR]: Index of second most vote     :193
+[INFOR]: Class of second most vote     :Australian terrier
+[INFOR]: Number of second most vote    :56.0
+[INFOR]: SEN testing of class 5_1000 before transform: 206
+[INFOR]: SPE testing of class 5_1000 before transform: 984
+
+[INFOR]: SEN testing of class 5_1000 after transform: 865
+[INFOR]: SPE testing of class 5_1000 after transform: 252
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 6_5000 --class_name_test 6_1000
+2021-09-14 18:04:34.919263: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  6_5000
+class_name_test =  6_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 18:04:37.708923: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 18:04:37.733340: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:04:37.738598: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 18:04:37.747393: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:04:37.749607: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:04:37.755875: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 18:04:37.759428: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 18:04:37.766504: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 18:04:37.771872: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 18:04:37.774973: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:04:37.777210: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:04:37.780050: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 18:04:37.794062: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x2653ae41840 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:04:37.797777: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 18:04:37.800483: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:04:37.806351: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:04:38.242939: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 18:04:38.245358: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 18:04:38.247101: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 18:04:38.248919: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 18:04:38.257026: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x26565a1cfe0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:04:38.259920: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 18:04:40.484700: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 18:04:41.163119: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:04:41.818138: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 18:04:42.580754: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:04:43.257102: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:04:43.959421: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 31ms/step
+[INFOR]: Index of most vote   :335
+[INFOR]: Class of most vote   :fox squirrel, eastern fox squirrel, Sciurus niger
+[INFOR]: Number of most vote  :493.0
+
+
+[INFOR]: Index of second most vote     :391
+[INFOR]: Class of second most vote     :coho, cohoe, coho salmon, blue jack, silver salmon, Oncorhynchus kisutch
+[INFOR]: Number of second most vote    :414.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 29ms/step
+[INFOR]: Toltal norm before transform: 0.8910
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.1821
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 29ms/step
+[INFOR]: SEN training of class 6_5000 before transform: 493
+[INFOR]: SPE training of class 6_5000 before transform: 4950
+
+[INFOR]: SEN training of class 6_5000 after transform: 3886
+[INFOR]: SPE training of class 6_5000 after transform: 3830
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 29ms/step
+[INFOR]: Index of most vote   :335
+[INFOR]: Class of most vote   :fox squirrel, eastern fox squirrel, Sciurus niger
+[INFOR]: Number of most vote  :91.0
+
+
+[INFOR]: Index of second most vote     :391
+[INFOR]: Class of second most vote     :coho, cohoe, coho salmon, blue jack, silver salmon, Oncorhynchus kisutch
+[INFOR]: Number of second most vote    :80.0
+[INFOR]: SEN testing of class 6_1000 before transform: 91
+[INFOR]: SPE testing of class 6_1000 before transform: 986
+
+[INFOR]: SEN testing of class 6_1000 after transform: 899
+[INFOR]: SPE testing of class 6_1000 after transform: 486
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 7_5000 --class_name_test 7_1000
+2021-09-14 18:05:48.572838: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  7_5000
+class_name_test =  7_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 18:05:51.364770: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 18:05:51.390300: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:05:51.396252: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 18:05:51.404798: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:05:51.406967: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:05:51.413402: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 18:05:51.417116: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 18:05:51.424415: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 18:05:51.429815: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 18:05:51.432987: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:05:51.435284: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:05:51.438233: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 18:05:51.451530: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x22a38f74ee0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:05:51.454681: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 18:05:51.457251: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:05:51.462330: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:05:51.909146: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 18:05:51.912233: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 18:05:51.913904: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 18:05:51.915707: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 18:05:51.923950: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x22a669f97f0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:05:51.926985: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 18:05:54.139405: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 18:05:54.815575: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:05:55.471159: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 18:05:56.247874: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:05:56.918628: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:05:57.622807: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 31ms/step
+[INFOR]: Index of most vote   :339
+[INFOR]: Class of most vote   :sorrel
+[INFOR]: Number of most vote  :1472.0
+
+
+[INFOR]: Index of second most vote     :268
+[INFOR]: Class of second most vote     :Mexican hairless
+[INFOR]: Number of second most vote    :139.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 29ms/step
+[INFOR]: Toltal norm before transform: 0.6322
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.0045
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 29ms/step
+[INFOR]: SEN training of class 7_5000 before transform: 1472
+[INFOR]: SPE training of class 7_5000 before transform: 4982
+
+[INFOR]: SEN training of class 7_5000 after transform: 3970
+[INFOR]: SPE training of class 7_5000 after transform: 3796
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 29ms/step
+[INFOR]: Index of most vote   :339
+[INFOR]: Class of most vote   :sorrel
+[INFOR]: Number of most vote  :293.0
+
+
+[INFOR]: Index of second most vote     :509
+[INFOR]: Class of second most vote     :confectionery, confectionary, candy store
+[INFOR]: Number of second most vote    :22.0
+[INFOR]: SEN testing of class 7_1000 before transform: 293
+[INFOR]: SPE testing of class 7_1000 before transform: 995
+
+[INFOR]: SEN testing of class 7_1000 after transform: 968
+[INFOR]: SPE testing of class 7_1000 after transform: 226
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 8_5000 --class_name_test 8_1000
+2021-09-14 18:07:05.831814: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  8_5000
+class_name_test =  8_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 18:07:08.639446: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 18:07:08.665789: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:07:08.671552: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 18:07:08.680459: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:07:08.682692: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:07:08.689238: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 18:07:08.692850: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 18:07:08.700514: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 18:07:08.706670: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 18:07:08.709993: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:07:08.713021: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:07:08.715275: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 18:07:08.729151: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x1e2348f1c80 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:07:08.732837: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 18:07:08.735184: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:07:08.740843: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:07:09.187316: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 18:07:09.190259: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 18:07:09.191846: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 18:07:09.193474: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 18:07:09.201142: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x1e25b45e6d0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:07:09.203909: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 18:07:11.427745: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 18:07:12.107703: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:07:12.757238: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 18:07:13.532635: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:07:14.202915: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:07:14.907348: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 31ms/step
+[INFOR]: Index of most vote   :510
+[INFOR]: Class of most vote   :container ship, containership, container vessel
+[INFOR]: Number of most vote  :1092.0
+
+
+[INFOR]: Index of second most vote     :813
+[INFOR]: Class of second most vote     :spatula
+[INFOR]: Number of second most vote    :471.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 29ms/step
+[INFOR]: Toltal norm before transform: 0.7858
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.2543
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 29ms/step
+[INFOR]: SEN training of class 8_5000 before transform: 1092
+[INFOR]: SPE training of class 8_5000 before transform: 4896
+
+[INFOR]: SEN training of class 8_5000 after transform: 3918
+[INFOR]: SPE training of class 8_5000 after transform: 3936
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 29ms/step
+[INFOR]: Index of most vote   :510
+[INFOR]: Class of most vote   :container ship, containership, container vessel
+[INFOR]: Number of most vote  :229.0
+
+
+[INFOR]: Index of second most vote     :813
+[INFOR]: Class of second most vote     :spatula
+[INFOR]: Number of second most vote    :106.0
+[INFOR]: SEN testing of class 8_1000 before transform: 229
+[INFOR]: SPE testing of class 8_1000 before transform: 982
+
+[INFOR]: SEN testing of class 8_1000 after transform: 862
+[INFOR]: SPE testing of class 8_1000 after transform: 523
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>python main.py --model_name InceptionV3  --model_shape 299 299 --dataset_name cifar_10 --class_name_train 9_5000 --class_name_test 9_1000
+2021-09-14 18:08:21.515091: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+model_name =  InceptionV3
+dataset_name =  cifar_10
+class_name_train =  9_5000
+class_name_test =  9_1000
+data_shape =  (32, 32, 3)
+model_shape =  [299, 299]
+output_dir =  output/csv_data
+==================== TRAINING STAGE ====================
+[INFOR]: shape of x: (10000, 32, 32, 3)
+[INFOR]: shape of y: (10000, 1)
+[INFOR]: get pretrained model
+2021-09-14 18:08:24.344959: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library nvcuda.dll
+2021-09-14 18:08:24.369467: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:08:24.375276: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudart64_110.dll
+2021-09-14 18:08:24.384660: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:08:24.387593: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:08:24.393229: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cufft64_10.dll
+2021-09-14 18:08:24.396861: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library curand64_10.dll
+2021-09-14 18:08:24.403271: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusolver64_11.dll
+2021-09-14 18:08:24.408999: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cusparse64_11.dll
+2021-09-14 18:08:24.412068: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:08:24.415129: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:08:24.417396: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-14 18:08:24.431378: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x25f34823d90 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:08:24.435423: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): Host, Default Version
+2021-09-14 18:08:24.437865: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-14 18:08:24.443747: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2021-09-14 18:08:24.883144: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-14 18:08:24.886055: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0
+2021-09-14 18:08:24.887723: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N
+2021-09-14 18:08:24.889472: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 18786 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-14 18:08:24.897538: I tensorflow/compiler/xla/service/service.cc:169] XLA service 0x25f60e19500 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-14 18:08:24.900544: I tensorflow/compiler/xla/service/service.cc:177]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+2021-09-14 18:08:27.097168: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2021-09-14 18:08:27.776026: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cudnn64_8.dll
+2021-09-14 18:08:28.432158: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8100
+2021-09-14 18:08:29.201160: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublas64_11.dll
+2021-09-14 18:08:29.881613: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-14 18:08:30.585685: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+313/313 [==============================] - 13s 31ms/step
+[INFOR]: Index of most vote   :675
+[INFOR]: Class of most vote   :moving van
+[INFOR]: Number of most vote  :3200.0
+
+
+[INFOR]: Index of second most vote     :855
+[INFOR]: Class of second most vote     :thimble
+[INFOR]: Number of second most vote    :563.0
+
+[INFOR]: Create PDF for Positive Label
+
+313/313 [==============================] - 10s 29ms/step
+[INFOR]: Toltal norm before transform: 0.2647
+[INFOR]: Start create matrix geometry transform R
+[INFOR]: Shape of matrix R: 17x17
+[INFOR]: Toltal norm after transform: 0.0618
+
+[INFOR]: Create PDF for Negative Label
+
+313/313 [==============================] - 9s 30ms/step
+[INFOR]: SEN training of class 9_5000 before transform: 3200
+[INFOR]: SPE training of class 9_5000 before transform: 4770
+
+[INFOR]: SEN training of class 9_5000 after transform: 4255
+[INFOR]: SPE training of class 9_5000 after transform: 3777
+[INFOR]
+
+==================== TESTING STAGE ====================
+
+
+[INFOR]: shape of x: (2000, 32, 32, 3)
+[INFOR]: shape of y: (2000, 1)
+63/63 [==============================] - 2s 29ms/step
+[INFOR]: Index of most vote   :675
+[INFOR]: Class of most vote   :moving van
+[INFOR]: Number of most vote  :641.0
+
+
+[INFOR]: Index of second most vote     :855
+[INFOR]: Class of second most vote     :thimble
+[INFOR]: Number of second most vote    :108.0
+[INFOR]: SEN testing of class 9_1000 before transform: 641
+[INFOR]: SPE testing of class 9_1000 before transform: 950
+
+[INFOR]: SEN testing of class 9_1000 after transform: 948
+[INFOR]: SPE testing of class 9_1000 after transform: 444
+[INFOR]: Complete save data
+
+(env_akaDET) C:\Users\LauNT\Desktop\topology>

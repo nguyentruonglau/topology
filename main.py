@@ -214,7 +214,7 @@ if __name__ == '__main__':
         type=str,
         default='cifar_100',
         help='''Name of dataset
-        cifar_100, fgvc_aircraft, stanford_car
+        cifar-10, cifar_100, fgvc_aircraft, stanford_car
         '''
     )
     parser.add_argument(
