@@ -55,8 +55,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Topology and Geometric Transformations applications.
-
+In this project, my research team and I found a new method to train deep learning model quickly using transfer learning (no training phase). By applying Topology and Geometric Transformation, we performed the knowledge transformation and transfer to the new task with great accuracy.
 
 ### Built With
 
@@ -86,24 +85,6 @@ Topology and Geometric Transformations applications.
 
 To get a local copy up and running follow these simple example steps.
 
-
-### Prerequisites
-
-1. Setting GPU: for Window at [here](https://www.tensorflow.org/install/gpu#windows_setup) & for Linux at [here](https://www.tensorflow.org/install/gpu#ubuntu_1804_cuda_110) [for Tensorflow].
-
-2. Checking GPU:
-   ```
-   >> import tensorflow as tf
-   
-   >> tf.config.list_physical_devices('GPU')
-   
-   return
-   
-   >> [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
-   
-   is successful.
-   ```
-
 ### Installation
 
 1. Clone the repo
@@ -112,25 +93,29 @@ To get a local copy up and running follow these simple example steps.
    ```
 2. Install packages
    ```
-   >> python -m venv <virtual environments name>
+   > python -m venv <virtual environments name>
    
-   >> activate.bat (in scripts folder)
+   > activate.bat (in scripts folder)
    
-   >> pip install -r requirements.txt
+   > pip install -r requirements.txt
    ```
+### Prerequisites
+
+1. Checking GPU for running this program:
+   ```
+   > import tensorflow as tf
+   
+   > tf.config.list_physical_devices('GPU')
+   ```
+   If return: [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+   
+   is successful.
+   
+2. If error, setting GPU: for Window at [here](https://www.tensorflow.org/install/gpu#windows_setup) & for Linux at [here](https://www.tensorflow.org/install/gpu#ubuntu_1804_cuda_110) [for Tensorflow].
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Adjust the parameters at [here](https://github.com/nguyentruonglau/topology/blob/main/main.py) to change:
-* Number of images used
-* Model architecture
-* Dataset
-
-Run code:
-```
->> python main.py
-```
 
 <!-- CONTRIBUTING -->
 ## Contributor
