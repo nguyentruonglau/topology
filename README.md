@@ -114,6 +114,30 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+### Data
+
+Our program requires npy files so you need to use generate/gen_data.py to do the conversion. The directory structure for your data would be: 
+
+Cifar_100
+├──test
+|   ├──Apple
+|   ├──Sea
+|   |...
+|
+└──train
+    ├──Apple
+    ├──Sea
+    |...
+
+### Training & Testing
+
+Run: >python main.py --model_name (model name that you want to perform training)
+                     --data_shape (shape of images)
+                     --model_shape (shape of model, we must have retrain model, so model_shape will have fixed shapes)
+                     --dataset_name (name of dataset)
+                     --class_name_train (name of npy files, for train)
+                     --class_name_test (name of npy files, for test)
+                     --output_dir (directory will contain output of this program)
 
 <!-- CONTRIBUTING -->
 ## Contributor
