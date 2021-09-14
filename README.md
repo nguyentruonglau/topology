@@ -67,17 +67,12 @@ In this project, my research team and I found a new method to train deep learnin
 
 ### Requirements
 
-* h5py==2.10.0
-* imutils==0.5.4
 * Keras==2.4.3
-* matplotlib==3.3.4
-* numpy==1.19.5
 * opencv-contrib-python==4.5.1.48
 * opencv-python==4.5.2.52
 * scikit-image==0.17.2
 * scikit-learn==0.24.2
 * scipy==1.5.4
-* tqdm==4.60.0
 * tensorflow==2.5.
 
 <!-- GETTING STARTED -->
