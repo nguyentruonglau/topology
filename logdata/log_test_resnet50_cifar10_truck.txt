@@ -1,0 +1,78 @@
+
+(env_akaCLS) C:\Users\LauNT\Desktop\Efficient_Image_Classification>python report.py
+2021-09-20 10:37:46.100817: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudart64_110.dll
+
+[INFOR]: input_dir= convert/data
+[INFOR]: output_dir= data/output
+[INFOR]: model_path= data/output/model/val_accuracy_max.h5
+[INFOR]: json_label_decode= convert/data/label_decode.json
+[INFOR]: json_history= data/output/model/history.json
+[INFOR]: model_name=ResNet50
+
+2021-09-20 10:37:49.620430: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library nvcuda.dll
+2021-09-20 10:37:49.660414: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-20 10:37:49.665615: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudart64_110.dll
+2021-09-20 10:37:49.673608: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublas64_11.dll
+2021-09-20 10:37:49.675703: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-20 10:37:49.681054: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cufft64_10.dll
+2021-09-20 10:37:49.684304: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library curand64_10.dll
+2021-09-20 10:37:49.690552: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cusolver64_10.dll
+2021-09-20 10:37:49.695584: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cusparse64_11.dll
+2021-09-20 10:37:49.699195: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudnn64_8.dll
+2021-09-20 10:37:49.701458: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-09-20 10:37:49.703437: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-20 10:37:49.715779: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1fc908da470 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-09-20 10:37:49.719100: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-09-20 10:37:49.721364: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1720] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.785GHz coreCount: 82 deviceMemorySize: 24.00GiB deviceMemoryBandwidth: 871.81GiB/s
+2021-09-20 10:37:49.726673: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudart64_110.dll
+2021-09-20 10:37:49.729175: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublas64_11.dll
+2021-09-20 10:37:49.731809: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-20 10:37:49.734542: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cufft64_10.dll
+2021-09-20 10:37:49.736932: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library curand64_10.dll
+2021-09-20 10:37:49.739273: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cusolver64_10.dll
+2021-09-20 10:37:49.742229: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cusparse64_11.dll
+2021-09-20 10:37:49.744893: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudnn64_8.dll
+2021-09-20 10:37:49.747282: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1862] Adding visible gpu devices: 0
+2021-09-20 10:37:50.196605: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1261] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-09-20 10:37:50.200052: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1267]      0
+2021-09-20 10:37:50.201592: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1280] 0:   N
+2021-09-20 10:37:50.203217: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1406] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 19110 MB memory) -> physical GPU (device: 0, name: GeForce RTX 3090, pci bus id: 0000:01:00.0, compute capability: 8.6)
+2021-09-20 10:37:50.210292: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1fceb8db660 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-09-20 10:37:50.213246: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce RTX 3090, Compute Capability 8.6
+[INFOR]: Pretrained model is loaded.
+[INFOR]: Get test data.
+2021-09-20 10:37:52.195402: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2021-09-20 10:37:52.684330: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublas64_11.dll
+2021-09-20 10:37:53.333005: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cublasLt64_11.dll
+2021-09-20 10:37:53.339775: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library cudnn64_8.dll
+2021-09-20 10:37:54.708704: I tensorflow/core/platform/windows/subprocess.cc:308] SubProcess ended with return code: 0
+
+2021-09-20 10:37:54.764205: I tensorflow/core/platform/windows/subprocess.cc:308] SubProcess ended with return code: 0
+
+2021-09-20 10:37:54.993425: I tensorflow/stream_executor/cuda/cuda_blas.cc:1838] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+
+
+[INFOR]: Report test data
+
+              precision    recall  f1-score   support
+
+         one       0.91      0.93      0.92      1000
+         two       0.93      0.91      0.92      1000
+
+    accuracy                           0.92      2000
+   macro avg       0.92      0.92      0.92      2000
+weighted avg       0.92      0.92      0.92      2000
+
+
+
+[INFOR]: See more result in data/output folder
+
+
+INFOR]: Total time: 3.5827267169952393
+
+(env_akaCLS) C:\Users\LauNT\Desktop\Efficient_Image_Classification>
