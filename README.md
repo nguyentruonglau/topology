@@ -141,12 +141,12 @@ Run: >python main.py --model_name (model name that you want to perform training)
 <!-- CONTRIBUTING -->
 ## Contributor
 
-1. BS. Nguyen Truong Lau (launt@fsoft.com.vn)
-2. PhD. Thai Trung Hieu (hieutt42@fsoft.com.vn)
-3. PhD. Pham Tri Cong (congpt3@fsoft.com.vn)
-4. PhD. Nicholas George Bishop (@soton.ac.uk)
-5. PhD. Thomas Davies (@soton.ac.uk)
-6. Assoc. Prof. Tran Thanh Long (Long.Tran-Thanh@warwick.ac.uk)
+1. BS. Nguyen Truong Lau
+2. PhD. Thai Trung Hieu
+3. PhD. Pham Tri Cong
+4. PhD. Nicholas George Bishop
+5. PhD. Thomas Davies
+6. Assoc. Prof. Tran Thanh Long
 
 
 <!-- LICENSE -->
